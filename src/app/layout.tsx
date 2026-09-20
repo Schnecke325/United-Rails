@@ -21,8 +21,8 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name}: ${site.tagline}`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   alternates: { canonical: '/' },
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'de_DE',
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}: ${site.tagline}`,
     description: site.description,
     url: absoluteUrl('/'),
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}: ${site.tagline}`,
     description: site.description,
   },
   icons: {

@@ -5,7 +5,7 @@ import { env } from './env';
  * Externe Ziele zentral aufgelöst.
  *
  * Alle URLs stammen aus der Umgebung, nirgendwo aus dem Quelltext. Was nicht
- * konfiguriert ist, fehlt hier — die Oberfläche blendet solche Links aus,
+ * konfiguriert ist, fehlt hier. Die Oberfläche blendet solche Links aus,
  * statt ins Leere zu verlinken oder eine URL zu erfinden.
  */
 
@@ -56,7 +56,7 @@ export function serverAddress(): string | undefined {
   return env().SERVER_URL;
 }
 
-/** Absolute URL auf Basis von SITE_URL — für Canonical-Tags und Open Graph. */
+/** Absolute URL auf Basis von SITE_URL, für Canonical-Tags und Open Graph. */
 export function absoluteUrl(path = '/'): string {
   const base = env().SITE_URL.replace(/\/$/, '');
   return path.startsWith('/') ? `${base}${path}` : `${base}/${path}`;

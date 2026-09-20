@@ -1,58 +1,74 @@
 /**
  * Design-Tokens für United Rails e.V.
  *
- * Industriell, dunkel, Bahn- und Ingenieurssprache. Genau ein Signal-Akzent,
- * damit die Seite ruhig bleibt. Keine Farbwerte in Komponenten — alles hier.
+ * Helle Grundfläche, technisch und industriell im Detail. Dunkel wird gezielt
+ * eingesetzt: Kopfbereich, Fußbereich, einzelne Kontrastflächen. Dazu ein
+ * kräftiger Signalton als einziger Akzent.
+ *
+ * Keine Farbwerte in Komponenten. Alles steht hier.
  */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* --- Flächen: Stahl und Anthrazit, von tief nach hoch ------------------ */
-  --surface-0: #0b0e10; /* Seitenhintergrund */
-  --surface-1: #10151a; /* Sektionen */
-  --surface-2: #161d23; /* Karten */
-  --surface-3: #1d262e; /* erhobene Elemente, Hover */
-  --surface-inset: #080b0d; /* Eingabefelder, Anzeigetafeln */
+  /* --- Helle Flächen, von hell nach etwas kräftiger ---------------------- */
+  --surface-0: #ffffff; /* Seitenhintergrund */
+  --surface-1: #eef2f5; /* abgesetzte Abschnitte, Stahlgrau sehr hell */
+  --surface-2: #ffffff; /* Karten */
+  --surface-3: #f4f7f9; /* Hover, leicht erhobene Elemente */
+  --surface-inset: #f1f5f8; /* Eingabefelder, Anzeigetafeln */
+
+  /* --- Dunkle Flächen: Kopfbereich, Fußbereich, Kontrastbänder ---------- */
+  --surface-dark: #14202a;
+  --surface-dark-2: #1e2d39;
+  --fg-on-dark: #eef3f7;
+  --fg-on-dark-secondary: #b9c8d3;
+  --fg-on-dark-muted: #90a3b1;
+  --border-on-dark: #2f4250;
 
   /* --- Linien und Raster ------------------------------------------------ */
-  --border-subtle: #212c34;
-  --border-default: #2c3a44;
-  --border-strong: #3d4f5c;
-  --grid-line: rgba(126, 160, 180, 0.07); /* Ingenieurraster */
-  --blueprint-line: rgba(90, 160, 200, 0.12); /* Blaupausen-Details */
+  --border-subtle: #e3e9ee;
+  --border-default: #ccd7de;
+  --border-strong: #8496a4; /* Rahmen von Bedienelementen, 3:1 gegen Weiß */
+  --grid-line: rgba(35, 70, 95, 0.055); /* Ingenieurraster */
+  --blueprint-line: rgba(30, 95, 145, 0.09); /* Blaupausen-Details */
 
   /* --- Text -------------------------------------------------------------- */
-  --fg-primary: #e8eef3;
-  --fg-secondary: #b3c0cb;
-  --fg-muted: #8494a1;
-  --fg-inverted: #0b0e10;
+  --fg-primary: #16212b;
+  --fg-secondary: #42556a; /* Fließtext */
+  --fg-muted: #5c7080; /* Nebenangaben, Beschriftungen */
+  --fg-inverted: #ffffff;
 
-  /* --- Signal-Akzent: ein einziger starker Ton --------------------------- */
-  --accent: #f4600a; /* Signalorange */
-  --accent-hover: #ff7526;
-  --accent-active: #d44f04;
-  --accent-soft: rgba(244, 96, 10, 0.14);
-  --accent-border: rgba(244, 96, 10, 0.4);
-  --accent-contrast: #140700; /* Text auf Akzentfläche */
+  /* --- Signal-Akzent: ein einziger kräftiger Ton -------------------------
+     Drei Abstufungen, weil Kontrast und Signalwirkung sich sonst in die Quere
+     kommen: die helle Variante nur für Grafik, die kräftige hinter weißem
+     Text, die dunkle für Text und Links auf heller Fläche. */
+  --accent-bright: #e2550a; /* nur Grafik: Signalpunkte, Linien, Marken */
+  --accent: #c94a06; /* Flächen hinter weißem Text, 4.7:1 */
+  --accent-hover: #b84302;
+  --accent-active: #a53c02;
+  --accent-text: #b84302; /* Text und Links auf heller Fläche, 5.5:1 */
+  --accent-soft: #fdf0e7;
+  --accent-border: #f0ad80;
+  --accent-contrast: #ffffff; /* Text auf Akzentfläche */
 
   /* --- Bahnsignale, zugleich Statusfarben ------------------------------- */
-  --signal-clear: #35b678; /* Hp1 / APPROVED / ONLINE */
-  --signal-stop: #e04a4f; /* Hp0 / REJECTED / OFFLINE */
-  --signal-caution: #e8a317; /* Vr0 / PENDING / Warnung */
-  --signal-info: #4a9ed4; /* Hinweis, Platzhalter, TODO */
+  --signal-clear: #1c7a4b; /* Hp1, freigegeben, online */
+  --signal-stop: #b8332e; /* Hp0, abgelehnt, offline */
+  --signal-caution: #8a6100; /* Vr0, in Prüfung, Warnung */
+  --signal-info: #1d6293; /* Hinweis, Platzhalter, offene Zulieferung */
 
-  --signal-clear-soft: rgba(53, 182, 120, 0.13);
-  --signal-stop-soft: rgba(224, 74, 79, 0.13);
-  --signal-caution-soft: rgba(232, 163, 23, 0.13);
-  --signal-info-soft: rgba(74, 158, 212, 0.13);
+  --signal-clear-soft: #e8f4ed;
+  --signal-stop-soft: #fbecea;
+  --signal-caution-soft: #fbf2df;
+  --signal-info-soft: #eaf2f9;
 
   /* --- Typografie -------------------------------------------------------- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: var(--font-mono-display), ui-monospace, 'SFMono-Regular', 'Roboto Mono', monospace;
 
   /* Schriftgrößen. globals.css bildet sie auf Tailwinds --text-* ab, damit
-     text-xs … text-hero dieselben Werte nutzen wie eigenes CSS. */
+     text-xs bis text-hero dieselben Werte nutzen wie eigenes CSS. */
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
@@ -61,26 +77,25 @@
   --fs-2xl: 1.75rem;
   --fs-3xl: 2.25rem;
   --fs-4xl: 3rem;
-  --fs-hero: clamp(2.5rem, 7vw, 5rem);
+  --fs-hero: clamp(2.5rem, 7vw, 4.5rem);
 
   --tracking-wide: 0.06em;
-  --tracking-display: 0.18em; /* Anzeigetafel-Optik */
+  --tracking-display: 0.16em; /* Anzeigetafel-Optik */
 
   /* --- Abstände und Radien ---------------------------------------------- */
-  --space-section: clamp(3.5rem, 8vw, 7rem);
+  --space-section: clamp(4rem, 9vw, 8rem);
   --content-width: 76rem;
-  --content-narrow: 48rem;
-  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --content-narrow: 44rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
 
   --radius-sm: 3px;
   --radius-md: 6px;
-  --radius-lg: 10px;
+  --radius-lg: 12px;
   --radius-pill: 999px;
 
-  /* --- Schatten und Effekte --------------------------------------------- */
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.28);
-  --shadow-raised: 0 2px 4px rgba(0, 0, 0, 0.5), 0 16px 48px rgba(0, 0, 0, 0.4);
-  --glow-accent: 0 0 0 1px var(--accent-border), 0 0 24px rgba(244, 96, 10, 0.2);
+  /* --- Schatten: sparsam, damit es nicht schwer wirkt -------------------- */
+  --shadow-card: 0 1px 2px rgba(22, 40, 55, 0.05), 0 8px 20px rgba(22, 40, 55, 0.05);
+  --shadow-raised: 0 2px 6px rgba(22, 40, 55, 0.07), 0 18px 40px rgba(22, 40, 55, 0.1);
 
   /* --- Bewegung: kurz und zurückhaltend ---------------------------------- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);

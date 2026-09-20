@@ -12,7 +12,7 @@ export type TimelineEntry = {
 /**
  * Zeitleiste im Streckenband-Stil: eine durchgehende Linie mit Haltepunkten.
  *
- * Solange keine offiziellen Angaben vorliegen, zeigt sie einen Platzhalter —
+ * Solange keine offiziellen Angaben vorliegen, zeigt sie einen Platzhalter,
  * keine erfundenen Gründungsdaten.
  */
 export function Timeline({ entries }: { entries: TimelineEntry[] }) {
@@ -22,8 +22,8 @@ export function Timeline({ entries }: { entries: TimelineEntry[] }) {
         title="Offizielle United-Rails-Historie"
         token="[PLATZHALTER: OFFIZIELLE UNITED-RAILS-HISTORIE]"
       >
-        Gründungsdatum, Eintragung des Vereins und die weiteren Stationen liefert der
-        Verein. Die Zeitleiste ist fertig und wird dann nur noch gefüllt.
+        Gründungsdatum, Eintragung des Vereins und die weiteren Stationen kommen vom
+        Verein. Die Zeitleiste ist fertig und wird dann gefüllt.
       </Placeholder>
     );
   }
@@ -36,10 +36,10 @@ export function Timeline({ entries }: { entries: TimelineEntry[] }) {
             aria-hidden
             className={cn(
               'absolute -left-[41px] top-1.5 h-4 w-4 rounded-full',
-              'border-2 border-[var(--accent)] bg-[var(--surface-0)]',
+              'border-2 border-[var(--accent-bright)] bg-[var(--surface-0)]',
             )}
           />
-          <span className="ur-display text-xs uppercase text-accent">
+          <span className="ur-display text-xs uppercase text-accent-text">
             {entry.date}
           </span>
           <h3 className="mt-1 text-lg">{entry.title}</h3>

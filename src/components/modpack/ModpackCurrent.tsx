@@ -28,7 +28,7 @@ export function ModpackCurrent({
     <div
       className={cn(
         'rounded-[var(--radius-lg)] border border-[var(--accent-border)]',
-        'bg-[var(--surface-2)] p-6 sm:p-8',
+        'bg-[var(--accent-soft)] p-7 sm:p-9',
       )}
     >
       <div className="flex flex-wrap items-center gap-3">

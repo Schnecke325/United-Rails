@@ -14,17 +14,14 @@ const variants: Record<Variant, string> = {
     'bg-[var(--accent)] text-accent-contrast hover:bg-[var(--accent-hover)] ' +
     'active:bg-[var(--accent-active)] font-semibold',
   secondary:
-    'border border-[var(--border-default)] bg-[var(--surface-2)] text-fg ' +
-    'hover:border-[var(--border-strong)] hover:bg-[var(--surface-3)]',
-  ghost:
-    'text-fg-secondary hover:bg-[var(--surface-2)] hover:text-fg',
-  danger:
-    'border border-[var(--signal-stop)] text-signal-stop ' +
-    'hover:bg-[var(--signal-stop-soft)]',
+    'border border-[var(--border-strong)] bg-[var(--surface-0)] text-fg ' +
+    'hover:border-[var(--fg-muted)] hover:bg-[var(--surface-3)]',
+  ghost: 'text-fg-secondary hover:bg-[var(--surface-1)] hover:text-fg',
+  danger: 'border border-[var(--signal-stop)] text-signal-stop hover:bg-[var(--signal-stop-soft)]',
 };
 
 const sizes: Record<Size, string> = {
-  sm: 'h-8 px-3 text-sm',
+  sm: 'h-9 px-3.5 text-sm',
   md: 'h-10 px-4 text-sm',
   lg: 'h-12 px-6 text-base',
 };
@@ -56,8 +53,6 @@ export function ButtonLink({
   className,
   ...props
 }: ButtonLinkProps) {
-  const externalProps = external
-    ? { target: '_blank' as const, rel: 'noopener noreferrer' }
-    : {};
+  const externalProps = external ? { target: '_blank' as const, rel: 'noopener noreferrer' } : {};
   return <Link className={classes(variant, size, className)} {...externalProps} {...props} />;
 }

@@ -19,7 +19,7 @@ export default function ProjektPage() {
       <PageHeader
         eyebrow="Projekt"
         title="Das Eisenbahnprojekt"
-        description="Ein zusammenhängendes Netz, das über Jahre wächst: geplante Strecken, gebaute Bahnhöfe, eingesetzte Fahrzeuge und ein Betrieb nach Fahrplan."
+        description="Ein zusammenhängendes Netz aus Strecken, Bahnhöfen und Fahrzeugen, betrieben nach Fahrplan."
       />
 
       <Section tone="base">
@@ -27,9 +27,9 @@ export default function ProjektPage() {
           <Prose>
             <h2>Wie gebaut wird</h2>
             <p>
-              Strecken entstehen nicht zufällig. Sie werden geplant, an das bestehende Netz
-              angebunden und mit Bahnhöfen, Betriebsanlagen und Signaltechnik ausgestattet.
-              Was fertig ist, geht in den Fahrplanbetrieb über.
+              Eine Strecke wird zuerst geplant, dann gebaut und an das bestehende Netz
+              angebunden. Dazu kommen Bahnhöfe, Betriebsanlagen und Signaltechnik. Was
+              fertig ist, geht in den Fahrplanbetrieb.
             </p>
             <h2>Wer baut</h2>
             <p>
@@ -54,7 +54,7 @@ export default function ProjektPage() {
       <Section tone="grid">
         <SectionHeading
           eyebrow="Historie"
-          title="Wie United Rails entstanden ist"
+          title="Historie"
           description="Die Zeitleiste der Gründung und der wichtigsten Schritte."
         />
         <div className="mt-8">

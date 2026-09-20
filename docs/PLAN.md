@@ -1,4 +1,4 @@
-# United Rails e.V. — Architektur, Tech-Stack und Roadmap
+# United Rails e.V.: Architektur, Tech-Stack und Roadmap
 
 Grundlage: `docs/MASTER_PROMPT.txt` (vom Nutzer gelieferte Spezifikation).
 Stand: 2026-09-20
@@ -39,7 +39,7 @@ Drei Dinge prägen die Architektur besonders:
 
 | Baustein | Wahl | Warum |
 |---|---|---|
-| Framework | **Next.js 15, App Router, TypeScript** | React-basiert (von der Vorgabe bevorzugt), Frontend und Backend in einem Deployment, Server Components für schnelle öffentliche Seiten, Route Handlers für API. Läuft als normaler Node-Prozess hinter nginx auf einem VPS — genau das, was der Hoster anbietet. |
+| Framework | **Next.js 15, App Router, TypeScript** | React-basiert (von der Vorgabe bevorzugt), Frontend und Backend in einem Deployment, Server Components für schnelle öffentliche Seiten, Route Handlers für API. Läuft als normaler Node-Prozess hinter nginx auf einem VPS, genau das, was der Hoster anbietet. |
 | Styling | **Tailwind CSS v4 auf CSS-Custom-Properties** | Die Design-Tokens liegen als CSS-Variablen in einer Datei; Tailwind nutzt sie. Farb- oder Akzentwechsel später an einer Stelle. |
 | Datenbank | **PostgreSQL** | Relational wie gefordert, auf jedem VPS verfügbar, gute Volltext- und JSON-Unterstützung für Fahrplandaten. |
 | ORM | **Prisma** | Typisiertes Schema, Migrationen, klare Trennung von Datenzugriff und Logik. |
@@ -110,21 +110,29 @@ direkt in einer Komponente, keine Geschäftslogik in einer Route.
 
 ## 4. Designsystem
 
-Dunkel, industriell, Bahn-/Ingenieursprache, zurückhaltend. Minecraft nur als Detail.
+Hell, luftig, technisch. Der industrielle Bahncharakter kommt aus Layout, Typografie,
+Linien und Rastern, nicht aus dunklen Flächen. Minecraft bleibt ein Detail.
 
-- **Flächen:** gestufte Stahl-/Anthrazittöne (`--surface-0` bis `--surface-3`)
-- **Akzent:** ein Signalton (Ausgangswert: Signalrot/-orange) für CTA, aktive Zustände,
-  Linienfarben. Genau ein Akzent, damit die Seite ruhig bleibt.
-- **Status:** eigene Töne für Frei/Halt/Warnung, wiederverwendet für PENDING/APPROVED/REJECTED
-- **Typografie:** moderne Sans (Inter o. ä.), dazu eine schmale Mono-Variante für
-  Fahrplan- und Anzeigetafel-Elemente
-- **Struktur:** feines Ingenieurraster, Blaupausen-Linien, Gleis-Trenner,
-  Anzeigetafel-Komponente für Zahlen und Zeiten
-- **Bewegung:** kurze Fades und Slides, Hover-Zustände, sonst nichts
+- **Grundfläche:** Weiß, dazu ein sehr helles Stahlgrau als Band für abgesetzte
+  Abschnitte (`--surface-0` bis `--surface-3`)
+- **Dunkel gezielt:** Kopfbereich, mobiles Menü und Fußbereich stehen auf
+  `--surface-dark`. Die Hilfsklasse `.ur-dark` schaltet Text- und Rahmenfarben mit um,
+  damit Komponenten nicht jede Farbe einzeln kennen müssen.
+- **Akzent:** ein Signalton in drei Abstufungen, weil Kontrast und Signalwirkung sich
+  sonst widersprechen: `--accent-bright` nur für Grafik, `--accent` als Fläche hinter
+  weißem Text (4.7:1), `--accent-text` für Text und Links auf hellem Grund (5.5:1)
+- **Status:** eigene Töne für Frei, Halt und Warnung, wiederverwendet für
+  PENDING, APPROVED, REJECTED und den Serverstatus
+- **Typografie:** Inter für Fließtext, IBM Plex Mono für Fahrplan- und
+  Anzeigetafel-Elemente
+- **Struktur:** feines Ingenieurraster, Blaupausen-Linien, Gleis-Trenner
+- **Bilder statt Symbole:** Wo ein Bild hingehört, steht die Komponente
+  `ImagePlaceholder` mit festem Seitenverhältnis und Beschriftung. Symbole gibt es nur
+  dort, wo sie eine Funktion haben: Menü, Schließen, Aufklappen, externer Link.
+- **Bewegung:** kurze Fades, Hover-Zustände, sonst nichts
 
-Alles als CSS-Variablen in `src/styles/tokens.css`, keine Farbwerte in Komponenten.
-
----
+Alle Werte stehen als CSS-Variablen in `src/styles/tokens.css`. Keine Farbe steht in
+einer Komponente. Die Kontrastwerte sind gegen die Zielwerte der WCAG-Stufe AA geprüft.
 
 ## 5. Datenmodell (Kern)
 
@@ -149,7 +157,7 @@ so wie die Vorgabe es verlangt.
 
 ---
 
-## 6. Offene Punkte — bleiben Platzhalter
+## 6. Offene Punkte, die Platzhalter bleiben
 
 | Thema | Umgang |
 |---|---|

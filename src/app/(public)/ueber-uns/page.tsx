@@ -59,7 +59,7 @@ export default function UeberUnsPage() {
             <h2>Ziele</h2>
             <p>
               Das Projekt ist auf Dauer angelegt. Strecken und Bahnhöfe werden nicht nur
-              gebaut, sondern betrieben, gepflegt und erweitert.
+              gebaut, sondern auch betrieben, gepflegt und erweitert.
             </p>
           </Prose>
           <Placeholder title="Offizielle Vereinsangaben">
@@ -72,7 +72,7 @@ export default function UeberUnsPage() {
       <Section tone="grid">
         <SectionHeading
           eyebrow="Team"
-          title="Wer dahintersteht"
+          title="Team"
           description="Die Profile pflegt das Team selbst im internen Bereich."
         />
         <div className="mt-8">

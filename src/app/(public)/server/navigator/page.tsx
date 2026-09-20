@@ -18,7 +18,7 @@ export default function NavigatorPage() {
       <PageHeader
         eyebrow="Navigator"
         title="Verbindungssuche"
-        description="Von — Nach — Verbindung suchen. Das Ergebnis zeigt Abfahrt, Ankunft, Dauer, Zug, Linie und Umstiege."
+        description="Von, nach, suchen. Das Ergebnis zeigt Abfahrt, Ankunft, Dauer, Zug, Linie und Umstiege."
       />
       <Section tone="base">
         <Placeholder title="Fahrplandaten" token="CRN_API_BASE_URL">

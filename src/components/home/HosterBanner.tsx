@@ -4,12 +4,12 @@ import type { ExternalLink } from '@/lib/config/links';
 /**
  * Partner- und Hosterbereich.
  *
- * TODO: Name, Logo und genaue Formulierung der Partnerschaft kommen vom Verein.
+ * TODO: Name, Logo und Formulierung der Partnerschaft kommen vom Verein.
  * Ohne konfigurierte HOSTER_URL bleibt hier ein sichtbarer Platzhalter.
  */
 export function HosterBanner({ hoster }: { hoster?: ExternalLink }) {
   return (
-    <div className="rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--surface-2)] p-6 sm:p-8">
+    <div className="rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--surface-1)] p-7 sm:p-9">
       <span className="ur-eyebrow">Partner</span>
       {hoster ? (
         <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
@@ -20,7 +20,7 @@ export function HosterBanner({ hoster }: { hoster?: ExternalLink }) {
             href={hoster.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent hover:underline"
+            className="text-accent-text hover:underline"
           >
             Zum Hoster
           </a>

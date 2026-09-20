@@ -24,7 +24,7 @@ export default async function ServerPage() {
       <PageHeader
         eyebrow="Server"
         title="Das Netz"
-        description="Karte, Bahnhöfe, Linien und Fahrpläne an einem Ort — mit Verbindungssuche von Bahnhof zu Bahnhof."
+        description="Karte, Bahnhöfe, Linien und Fahrpläne an einem Ort, mit Verbindungssuche von Bahnhof zu Bahnhof."
       />
 
       <Section tone="base">

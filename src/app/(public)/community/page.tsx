@@ -18,8 +18,8 @@ export default function CommunityPage() {
     <>
       <PageHeader
         eyebrow="Community"
-        title="Mitreden und mitfahren"
-        description="Der Austausch läuft über Discord, Videos gibt es auf YouTube."
+        title="Discord und YouTube"
+        description="Der Austausch läuft über Discord. Videos gibt es auf YouTube."
       />
       <Section tone="base">
         <CommunityPanels discord={links.discord} youtube={links.youtube} />

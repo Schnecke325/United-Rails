@@ -24,13 +24,13 @@ export default function GaleriePage() {
       <PageHeader
         eyebrow="Galerie"
         title="Bilder aus dem Netz"
-        description="Alle Bilder stammen aus der Community und werden vor der Veröffentlichung vom Team geprüft."
+        description="Alle Bilder stammen aus der Community. Vor der Veröffentlichung sieht das Team sie durch."
       >
         <ButtonLink href={routes.galerieUpload}>Bild einreichen</ButtonLink>
       </PageHeader>
 
       <Section tone="base">
-        {/* Feste Kategorien — keine frei erfundenen Schlagworte. */}
+        {/* Feste Kategorien, keine frei erfundenen Schlagworte. */}
         <nav aria-label="Kategorien">
           <ul className="flex flex-wrap gap-2">
             {GALLERY_CATEGORIES.map((category) => (

@@ -32,11 +32,18 @@ export default function DownloadsPage() {
       />
 
       <Section tone="base">
-        <ModpackCurrent
-          version={current}
-          curseforge={links.curseforge}
-          modrinth={links.modrinth}
+        <SectionHeading
+          eyebrow="Aktuell"
+          title="Aktuelle Version"
+          description="Version, Minecraft-Version, Loader und Änderungen der Fassung, die auf dem Server läuft."
         />
+        <div className="mt-8">
+          <ModpackCurrent
+            version={current}
+            curseforge={links.curseforge}
+            modrinth={links.modrinth}
+          />
+        </div>
       </Section>
 
       <Section tone="raised">

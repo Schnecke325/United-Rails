@@ -16,7 +16,7 @@ export default function ImpressumPage() {
       <Section tone="base">
         <Placeholder title="Impressumsangaben">
           Vertretungsberechtigte Personen, Anschrift, Kontakt, Registergericht und
-          Registernummer liefert der Verein. Hier steht bewusst kein erfundener Text — die
+          Registernummer liefert der Verein. Hier steht bewusst kein erfundener Text. Die
           Seite bleibt bis zur Zulieferung leer.
         </Placeholder>
       </Section>

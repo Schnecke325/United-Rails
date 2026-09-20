@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils/cn';
  *
  * Die Fläche hängt bewusst an `document.body`: Der Kopfbereich nutzt
  * `backdrop-filter`, und ein solcher Vorfahr wird zum Bezugsrahmen für
- * `position: fixed` — im Kopfbereich gerendert bliebe das Menü so hoch wie
+ * `position: fixed`. Im Kopfbereich gerendert bliebe das Menü so hoch wie
  * der Kopfbereich selbst.
  */
 export function MobileNav({ groups }: { groups: NavGroup[] }) {
@@ -52,19 +52,19 @@ export function MobileNav({ groups }: { groups: NavGroup[] }) {
     <div
       id="mobile-menu"
       className={cn(
-        'fixed inset-0 z-[var(--z-overlay)] flex flex-col',
-        'bg-[var(--surface-0)] ur-grid-surface',
+        'ur-dark fixed inset-0 z-[var(--z-overlay)] flex flex-col',
+        'ur-grid-surface',
       )}
     >
-      <div className="flex h-16 shrink-0 items-center justify-between border-b border-[var(--border-subtle)] px-[var(--gutter)]">
-        <span className="ur-display text-xs uppercase text-fg-muted">Navigation</span>
+      <div className="flex h-16 shrink-0 items-center justify-between border-b border-[var(--border-on-dark)] px-[var(--gutter)]">
+        <span className="ur-display text-xs uppercase text-fg-on-dark-muted">Navigation</span>
         <button
           type="button"
           onClick={() => setOpen(false)}
           autoFocus
           className={cn(
             'inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)]',
-            'border border-[var(--border-default)] text-fg',
+            'border border-[var(--border-on-dark)] text-fg-on-dark',
           )}
         >
           <span className="ur-sr-only">Menü schließen</span>
@@ -84,18 +84,18 @@ export function MobileNav({ groups }: { groups: NavGroup[] }) {
               {group.href ? (
                 <Link
                   href={group.href}
-                  className="ur-display block text-xs uppercase text-accent"
+                  className="ur-display block text-xs uppercase text-accent-text"
                 >
                   {group.label}
                 </Link>
               ) : (
-                <span className="ur-display block text-xs uppercase text-accent">
+                <span className="ur-display block text-xs uppercase text-accent-text">
                   {group.label}
                 </span>
               )}
 
               {group.items?.length ? (
-                <ul className="mt-3 space-y-1 border-l border-[var(--border-subtle)] pl-4">
+                <ul className="mt-3 space-y-1 border-l border-[var(--border-on-dark)] pl-4">
                   {group.items.map((item) => (
                     <li key={`${item.label}-${item.href}`}>
                       <Link
@@ -103,7 +103,7 @@ export function MobileNav({ groups }: { groups: NavGroup[] }) {
                         {...(item.external
                           ? { target: '_blank', rel: 'noopener noreferrer' }
                           : {})}
-                        className="block py-2 text-lg text-fg"
+                        className="block py-2 text-lg text-fg-on-dark"
                       >
                         {item.label}
                       </Link>
@@ -116,7 +116,7 @@ export function MobileNav({ groups }: { groups: NavGroup[] }) {
         </ul>
       </nav>
 
-      <div className="shrink-0 border-t border-[var(--border-subtle)] px-[var(--gutter)] py-5">
+      <div className="shrink-0 border-t border-[var(--border-on-dark)] px-[var(--gutter)] py-5">
         <Link
           href={routes.builder}
           className={cn(
@@ -139,8 +139,8 @@ export function MobileNav({ groups }: { groups: NavGroup[] }) {
         aria-controls="mobile-menu"
         className={cn(
           'inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-md)]',
-          'border border-[var(--border-default)] text-fg',
-          'transition-colors hover:bg-[var(--surface-2)]',
+          'border border-[var(--border-on-dark)] text-fg-on-dark',
+          'transition-colors hover:bg-[var(--surface-dark-2)]',
         )}
       >
         <span className="ur-sr-only">Menü öffnen</span>

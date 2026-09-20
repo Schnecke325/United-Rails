@@ -54,13 +54,13 @@ function MasonryItem({ image }: { image: GalleryImageView }) {
 
       <div
         className={cn(
-          'absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(8,11,13,0.95)] to-transparent p-4',
+          'absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(15,28,38,0.92)] to-transparent p-4',
           'opacity-0 transition-opacity duration-[var(--duration-base)]',
           'group-hover:opacity-100 group-focus-visible:opacity-100',
         )}
       >
-        <p className="font-medium text-fg">{image.title}</p>
-        <p className="ur-display mt-1 text-xs uppercase text-fg-muted">
+        <p className="font-medium text-[#ffffff]">{image.title}</p>
+        <p className="ur-display mt-1 text-xs uppercase text-[#d6dee5]">
           {image.categories.map(categoryLabel).join(' · ')}
         </p>
       </div>

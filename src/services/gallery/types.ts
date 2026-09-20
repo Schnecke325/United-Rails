@@ -1,7 +1,7 @@
 /**
  * Galerie-Domänentypen.
  *
- * Kategorien sind bewusst eine feste Liste — Mitglieder wählen aus, sie legen
+ * Kategorien sind bewusst eine feste Liste: Mitglieder wählen aus, sie legen
  * keine eigenen Schlagworte an. Ein Bild kann mehreren Kategorien angehören.
  */
 export const GALLERY_CATEGORIES = [

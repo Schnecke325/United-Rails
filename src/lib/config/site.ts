@@ -1,6 +1,6 @@
 /**
  * Statische Stammdaten der Seite.
- * Enthält bewusst keine erfundenen Vereinstexte — nur Struktur und Beschriftung.
+ * Enthält bewusst keine erfundenen Vereinstexte, nur Struktur und Beschriftung.
  */
 
 export const site = {

@@ -25,7 +25,7 @@ export default function MitgliedschaftPage() {
         <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <Placeholder title="Interessensformular">
             Das Formular wird angeschlossen, sobald die Datenbank steht. Abgefragt werden
-            Minecraft-Name, Discord-Name und Motivation — kein bürgerlicher Name.
+            Minecraft-Name, Discord-Name und Motivation, kein bürgerlicher Name.
           </Placeholder>
 
           <Card>

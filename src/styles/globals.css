@@ -11,18 +11,26 @@
   --color-surface-2: var(--surface-2);
   --color-surface-3: var(--surface-3);
   --color-surface-inset: var(--surface-inset);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-dark-2: var(--surface-dark-2);
 
   --color-line-subtle: var(--border-subtle);
   --color-line: var(--border-default);
   --color-line-strong: var(--border-strong);
+  --color-line-on-dark: var(--border-on-dark);
 
   --color-fg: var(--fg-primary);
   --color-fg-secondary: var(--fg-secondary);
   --color-fg-muted: var(--fg-muted);
   --color-fg-inverted: var(--fg-inverted);
+  --color-fg-on-dark: var(--fg-on-dark);
+  --color-fg-on-dark-secondary: var(--fg-on-dark-secondary);
+  --color-fg-on-dark-muted: var(--fg-on-dark-muted);
 
   --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-text: var(--accent-text);
   --color-accent-soft: var(--accent-soft);
   --color-accent-contrast: var(--accent-contrast);
 
@@ -34,8 +42,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
 
-  /* Schriftgrößen. Tailwind erzeugt daraus text-xs … text-hero und stellt sie
-     zugleich als CSS-Variablen für eigenes CSS bereit. */
+  /* Schriftgrößen. Tailwind erzeugt daraus text-xs bis text-hero. */
   --text-xs: var(--fs-xs);
   --text-sm: var(--fs-sm);
   --text-base: var(--fs-base);
@@ -88,7 +95,7 @@
     text-wrap: pretty;
   }
 
-  /* Sichtbarer Fokus überall — Pflicht für Tastaturbedienung. */
+  /* Sichtbarer Fokus überall, Pflicht für Tastaturbedienung. */
   :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
@@ -128,12 +135,29 @@
     padding-block: var(--space-section);
   }
 
+  /**
+   * Dunkle Fläche. Setzt Textfarben und Rahmen gleich mit, damit in den
+   * Komponenten nicht jede einzelne Farbe umgeschaltet werden muss.
+   */
+  .ur-dark {
+    background-color: var(--surface-dark);
+    color: var(--fg-on-dark);
+    --fg-primary: var(--fg-on-dark);
+    --fg-secondary: var(--fg-on-dark-secondary);
+    --fg-muted: var(--fg-on-dark-muted);
+    --border-subtle: var(--border-on-dark);
+    --border-default: var(--border-on-dark);
+    --surface-2: var(--surface-dark-2);
+    --surface-3: var(--surface-dark-2);
+    --accent-text: #f0803c; /* heller Akzent, 5.9:1 auf dunkel */
+  }
+
   /* Ingenieurraster als dezenter Hintergrund. */
   .ur-grid-surface {
     background-image:
       linear-gradient(var(--grid-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 48px 48px;
+    background-size: 56px 56px;
     background-position: center;
   }
 
@@ -142,7 +166,7 @@
     background-image:
       linear-gradient(var(--blueprint-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-size: 28px 28px;
   }
 
   /* Gleis-Trenner: zwei Schienen mit Schwellen. */
@@ -152,11 +176,7 @@
     background-image:
       linear-gradient(var(--border-default), var(--border-default)),
       linear-gradient(var(--border-default), var(--border-default)),
-      repeating-linear-gradient(
-        90deg,
-        var(--border-subtle) 0 2px,
-        transparent 2px 14px
-      );
+      repeating-linear-gradient(90deg, var(--border-subtle) 0 2px, transparent 2px 14px);
     background-size: 100% 1px, 100% 1px, 100% 100%;
     background-position: 0 2px, 0 7px, 0 0;
     background-repeat: no-repeat, no-repeat, repeat-x;
@@ -168,7 +188,7 @@
     font-size: var(--fs-xs);
     letter-spacing: var(--tracking-display);
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-text);
   }
 
   /* Anzeigetafel-Optik für Zeiten, Zahlen, Gleisnummern. */
@@ -176,6 +196,19 @@
     font-family: var(--font-mono);
     letter-spacing: var(--tracking-wide);
     font-variant-numeric: tabular-nums;
+  }
+
+  /**
+   * Bildplatzhalter. Steht dort, wo später ein echtes Bild hinkommt, und
+   * zeigt durch Streifen und Beschriftung, dass es ein Platzhalter ist.
+   */
+  .ur-image-placeholder {
+    background-color: var(--surface-1);
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0 14px,
+      rgba(35, 70, 95, 0.045) 14px 28px
+    );
   }
 
   /* Nur für Screenreader. */

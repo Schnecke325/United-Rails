@@ -4,10 +4,9 @@ import { cn } from '@/lib/utils/cn';
 import type { ServerStatus } from '@/services/serverStatus/types';
 
 /**
- * Serverstatus im Anzeigetafel-Stil.
+ * Serverstatus im Stil einer Anzeigetafel.
  *
- * Solange keine echte Datenquelle konfiguriert ist, zeigt das Feld ausdrücklich
- * „keine Daten" — niemals erfundene Spielerzahlen.
+ * Ohne echte Datenquelle steht hier "keine Daten", nie erfundene Spielerzahlen.
  */
 export function ServerStatusPanel({
   status,
@@ -20,13 +19,11 @@ export function ServerStatusPanel({
     <div
       className={cn(
         'rounded-[var(--radius-lg)] border border-[var(--border-default)]',
-        'bg-[var(--surface-inset)] p-5 sm:p-6',
+        'bg-[var(--surface-inset)] p-6',
       )}
     >
       <div className="flex items-center justify-between gap-4">
-        <span className="ur-display text-xs uppercase text-fg-muted">
-          Serverstatus
-        </span>
+        <span className="ur-display text-xs uppercase text-fg-muted">Serverstatus</span>
         {status.kind === 'online' && <StatusBadge tone="clear">Online</StatusBadge>}
         {status.kind === 'offline' && <StatusBadge tone="stop">Offline</StatusBadge>}
         {status.kind === 'unknown' && <StatusBadge tone="info">Keine Daten</StatusBadge>}
@@ -40,24 +37,16 @@ export function ServerStatusPanel({
       )}
 
       {status.kind === 'unknown' && (
-        <Placeholder
-          className="mt-4"
-          title="Live-Serverstatus"
-          token="SERVER_STATUS_API_URL"
-        >
+        <Placeholder className="mt-4" title="Live-Serverstatus" token="SERVER_STATUS_API_URL">
           Es ist noch keine Statusquelle hinterlegt. Die Anzeige bleibt leer, bis eine
           echte Schnittstelle konfiguriert ist.
         </Placeholder>
       )}
 
-      <div className="mt-5 border-t border-[var(--border-subtle)] pt-4">
-        <span className="ur-display block text-xs uppercase text-fg-muted">
-          Adresse
-        </span>
+      <div className="mt-6 border-t border-[var(--border-subtle)] pt-4">
+        <span className="ur-display block text-xs uppercase text-fg-muted">Adresse</span>
         {address ? (
-          <code className="ur-display mt-1 block text-base text-fg">
-            {address}
-          </code>
+          <code className="ur-display mt-1 block text-base text-fg">{address}</code>
         ) : (
           <span className="mt-1 block text-sm text-fg-muted">
             Noch nicht hinterlegt (SERVER_URL)

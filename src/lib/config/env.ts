@@ -8,7 +8,7 @@ import { z } from 'zod';
  * Client, damit niemals versehentlich ein Secret im Bundle landet.
  *
  * Grundsatz: Was noch nicht feststeht, bleibt leer und wird im UI ausgeblendet
- * oder als Platzhalter gekennzeichnet — es wird nichts erfunden.
+ * oder als Platzhalter gekennzeichnet. Es wird nichts erfunden.
  */
 
 /** Leerer String wird zu undefined, damit `.optional()` greift. */
@@ -34,7 +34,7 @@ const envSchema = z.object({
   /** Datenbank. Ohne sie läuft nur das statische Frontend. */
   DATABASE_URL: optionalString,
 
-  /** Discord OAuth — identifiziert Personen, vergibt aber keine Rechte. */
+  /** Discord OAuth. Identifiziert Personen, vergibt aber keine Rechte. */
   DISCORD_CLIENT_ID: optionalString,
   DISCORD_CLIENT_SECRET: optionalString,
   DISCORD_REDIRECT_URI: optionalUrl,

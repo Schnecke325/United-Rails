@@ -14,11 +14,11 @@ export function ModpackArchive({ versions }: { versions: ModpackVersionView[] })
   }
 
   return (
-    <ul className="divide-y divide-[var(--border-subtle)] rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--surface-1)]">
+    <ul className="divide-y divide-[var(--border-subtle)] rounded-[var(--radius-lg)] border border-[var(--border-subtle)] bg-[var(--surface-2)]">
       {versions.map((version) => (
         <li key={version.id}>
           <details className="group">
-            <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-[var(--surface-2)]">
+            <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-[var(--surface-3)]">
               <span className="ur-display text-base text-fg">
                 Version {version.version}
               </span>
@@ -81,7 +81,7 @@ export function ModpackArchive({ versions }: { versions: ModpackVersionView[] })
                 <a
                   key={file.id}
                   href={file.url}
-                  className="inline-block text-sm text-accent hover:underline"
+                  className="inline-block text-sm text-accent-text hover:underline"
                 >
                   {file.label} herunterladen
                 </a>

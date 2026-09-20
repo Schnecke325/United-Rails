@@ -21,8 +21,8 @@ export function CommunityPanels({
         <CardBody className="flex h-full flex-col gap-4">
           <CardTitle>Discord</CardTitle>
           <p className="flex-1 text-sm text-fg-secondary">
-            Absprachen zu Strecken und Bauprojekten, Support und Ankündigungen laufen
-            über den Discord-Server.
+            Absprachen zu Strecken und Bauprojekten, Hilfe und Ankündigungen laufen über
+            den Discord-Server.
           </p>
           {discord ? (
             <ButtonLink href={discord.url} external variant="secondary" className="self-start">
@@ -40,7 +40,7 @@ export function CommunityPanels({
         <CardBody className="flex h-full flex-col gap-4">
           <CardTitle>YouTube</CardTitle>
           <p className="flex-1 text-sm text-fg-secondary">
-            Videos zu Strecken, Fahrzeugen und Bauprojekten aus dem Netz von United Rails.
+            Videos zu Strecken, Fahrzeugen und Bauprojekten aus dem Netz.
           </p>
           {youtube ? (
             <ButtonLink href={youtube.url} external variant="secondary" className="self-start">

@@ -54,8 +54,8 @@ export function MainNav({ groups }: { groups: NavGroup[] }) {
             'ur-display flex items-center gap-1.5 whitespace-nowrap rounded-[var(--radius-sm)] px-3 py-2',
             'text-xs uppercase transition-colors duration-[var(--duration-fast)]',
             active
-              ? 'text-accent'
-              : 'text-fg-secondary hover:text-fg',
+              ? 'text-accent-text'
+              : 'text-fg-on-dark-secondary hover:text-fg-on-dark',
           );
 
           return (
@@ -90,8 +90,8 @@ export function MainNav({ groups }: { groups: NavGroup[] }) {
                 >
                   <ul
                     className={cn(
-                      'rounded-[var(--radius-md)] border border-[var(--border-default)]',
-                      'bg-[var(--surface-2)] p-2 shadow-[var(--shadow-raised)]',
+                      'rounded-[var(--radius-md)] border border-[var(--border-on-dark)]',
+                      'bg-[var(--surface-dark-2)] p-2 shadow-[var(--shadow-raised)]',
                     )}
                   >
                     {group.items?.map((item) => (
@@ -104,15 +104,15 @@ export function MainNav({ groups }: { groups: NavGroup[] }) {
                           className={cn(
                             'block rounded-[var(--radius-sm)] px-3 py-2',
                             'transition-colors duration-[var(--duration-fast)]',
-                            'hover:bg-[var(--surface-3)]',
+                            'hover:bg-[color-mix(in_srgb,var(--fg-on-dark)_10%,transparent)]',
                           )}
                         >
-                          <span className="flex items-center gap-1.5 text-sm font-medium text-fg">
+                          <span className="flex items-center gap-1.5 text-sm font-medium text-fg-on-dark">
                             {item.label}
                             {item.external && <ExternalIcon />}
                           </span>
                           {item.description && (
-                            <span className="mt-0.5 block text-xs text-fg-muted">
+                            <span className="mt-0.5 block text-xs text-fg-on-dark-muted">
                               {item.description}
                             </span>
                           )}

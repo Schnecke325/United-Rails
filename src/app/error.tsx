@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 /**
- * Fehlerseite. Zeigt nie Details der Ursache — weder Stacktrace noch interne
+ * Fehlerseite. Zeigt nie Details der Ursache, weder Stacktrace noch interne
  * Meldungen. Die Diagnose bleibt im Serverlog.
  */
 export default function GlobalError({
@@ -19,7 +19,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <div className="ur-grid-surface flex min-h-dvh flex-col items-center justify-center px-[var(--gutter)] text-center">
+    <div className="ur-blueprint-surface flex min-h-dvh flex-col items-center justify-center px-[var(--gutter)] text-center">
       <span className="ur-display text-xs uppercase tracking-[var(--tracking-display)] text-signal-stop">
         Fehler 500
       </span>
@@ -37,7 +37,7 @@ export default function GlobalError({
       <button
         type="button"
         onClick={reset}
-        className="mt-8 inline-flex h-12 items-center rounded-[var(--radius-md)] border border-[var(--border-default)] px-6 font-medium"
+        className="mt-8 inline-flex h-12 items-center rounded-[var(--radius-md)] border border-[var(--border-strong)] px-6 font-medium"
       >
         Erneut versuchen
       </button>

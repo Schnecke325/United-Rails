@@ -19,8 +19,8 @@ export default function HistoriePage() {
     <>
       <PageHeader
         eyebrow="Historie"
-        title="Vom ersten Gleis zum Verein"
-        description="Die wichtigsten Stationen von United Rails, chronologisch."
+        title="Historie"
+        description="Die wichtigsten Stationen von United Rails in zeitlicher Reihenfolge."
       />
       <Section tone="base">
         <Timeline entries={entries} />

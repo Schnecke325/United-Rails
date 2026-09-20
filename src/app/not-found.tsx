@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="ur-grid-surface flex min-h-dvh flex-col items-center justify-center px-[var(--gutter)] text-center">
+    <div className="ur-blueprint-surface flex min-h-dvh flex-col items-center justify-center px-[var(--gutter)] text-center">
       <span className="ur-display text-xs uppercase tracking-[var(--tracking-display)] text-signal-caution">
         Fehler 404
       </span>

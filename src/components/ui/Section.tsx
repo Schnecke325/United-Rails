@@ -1,8 +1,11 @@
 import { cn } from '@/lib/utils/cn';
 
 type SectionProps = React.HTMLAttributes<HTMLElement> & {
-  /** Hintergrundstufe; `grid` legt zusätzlich das Ingenieurraster darunter. */
-  tone?: 'base' | 'raised' | 'grid';
+  /**
+   * Hintergrund. `base` ist weiß, `raised` ein hellgraues Band, `grid` legt
+   * zusätzlich das Ingenieurraster darunter, `dark` ist ein Kontrastband.
+   */
+  tone?: 'base' | 'raised' | 'grid' | 'dark';
 };
 
 export function Section({ tone = 'base', className, children, ...props }: SectionProps) {
@@ -10,6 +13,7 @@ export function Section({ tone = 'base', className, children, ...props }: Sectio
     base: 'bg-[var(--surface-0)]',
     raised: 'bg-[var(--surface-1)]',
     grid: 'bg-[var(--surface-1)] ur-grid-surface',
+    dark: 'ur-dark ur-grid-surface',
   } as const;
 
   return (
@@ -47,21 +51,9 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <span className="ur-eyebrow">{eyebrow}</span>}
-      <Tag
-        className={cn(
-          'text-2xl sm:text-3xl',
-          align === 'center' && 'max-w-2xl',
-        )}
-      >
-        {title}
-      </Tag>
+      <Tag className={cn('text-2xl sm:text-3xl', align === 'center' && 'max-w-2xl')}>{title}</Tag>
       {description && (
-        <p
-          className={cn(
-            'max-w-2xl text-fg-secondary',
-            align === 'center' && 'mx-auto',
-          )}
-        >
+        <p className={cn('max-w-2xl text-fg-secondary', align === 'center' && 'mx-auto')}>
           {description}
         </p>
       )}

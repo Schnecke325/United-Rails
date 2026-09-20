@@ -20,7 +20,7 @@ export default function TeamPage() {
       <PageHeader
         eyebrow="Team"
         title="Das Team"
-        description="Anzeigename, Rolle, Avatar und eine kurze Beschreibung — mehr wird öffentlich nicht gezeigt."
+        description="Anzeigename, Rolle, Avatar und eine kurze Beschreibung. Mehr wird öffentlich nicht gezeigt."
       />
       <Section tone="base">
         {members.length === 0 && (

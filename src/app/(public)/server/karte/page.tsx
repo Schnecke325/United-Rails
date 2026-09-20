@@ -24,7 +24,7 @@ export default function KartePage() {
         <Placeholder title="Kartenkacheln">
           Die Karte lädt ein Kachelraster (zum Beispiel <code>tile_0_0.png</code>,{' '}
           <code>tile_0_1.png</code>). Sobald ein Satz Kacheln vorliegt, wird er hier
-          eingebunden — ohne ein einzelnes riesiges Bild und ohne Annahme über das
+          eingebunden, ohne ein einzelnes riesiges Bild und ohne Annahme über das
           erzeugende Werkzeug.
         </Placeholder>
       </Section>
