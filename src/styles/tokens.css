@@ -1,0 +1,98 @@
+/**
+ * Design-Tokens für United Rails e.V.
+ *
+ * Industriell, dunkel, Bahn- und Ingenieurssprache. Genau ein Signal-Akzent,
+ * damit die Seite ruhig bleibt. Keine Farbwerte in Komponenten — alles hier.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* --- Flächen: Stahl und Anthrazit, von tief nach hoch ------------------ */
+  --surface-0: #0b0e10; /* Seitenhintergrund */
+  --surface-1: #10151a; /* Sektionen */
+  --surface-2: #161d23; /* Karten */
+  --surface-3: #1d262e; /* erhobene Elemente, Hover */
+  --surface-inset: #080b0d; /* Eingabefelder, Anzeigetafeln */
+
+  /* --- Linien und Raster ------------------------------------------------ */
+  --border-subtle: #212c34;
+  --border-default: #2c3a44;
+  --border-strong: #3d4f5c;
+  --grid-line: rgba(126, 160, 180, 0.07); /* Ingenieurraster */
+  --blueprint-line: rgba(90, 160, 200, 0.12); /* Blaupausen-Details */
+
+  /* --- Text -------------------------------------------------------------- */
+  --fg-primary: #e8eef3;
+  --fg-secondary: #b3c0cb;
+  --fg-muted: #8494a1;
+  --fg-inverted: #0b0e10;
+
+  /* --- Signal-Akzent: ein einziger starker Ton --------------------------- */
+  --accent: #f4600a; /* Signalorange */
+  --accent-hover: #ff7526;
+  --accent-active: #d44f04;
+  --accent-soft: rgba(244, 96, 10, 0.14);
+  --accent-border: rgba(244, 96, 10, 0.4);
+  --accent-contrast: #140700; /* Text auf Akzentfläche */
+
+  /* --- Bahnsignale, zugleich Statusfarben ------------------------------- */
+  --signal-clear: #35b678; /* Hp1 / APPROVED / ONLINE */
+  --signal-stop: #e04a4f; /* Hp0 / REJECTED / OFFLINE */
+  --signal-caution: #e8a317; /* Vr0 / PENDING / Warnung */
+  --signal-info: #4a9ed4; /* Hinweis, Platzhalter, TODO */
+
+  --signal-clear-soft: rgba(53, 182, 120, 0.13);
+  --signal-stop-soft: rgba(224, 74, 79, 0.13);
+  --signal-caution-soft: rgba(232, 163, 23, 0.13);
+  --signal-info-soft: rgba(74, 158, 212, 0.13);
+
+  /* --- Typografie -------------------------------------------------------- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-mono-display), ui-monospace, 'SFMono-Regular', 'Roboto Mono', monospace;
+
+  /* Schriftgrößen. globals.css bildet sie auf Tailwinds --text-* ab, damit
+     text-xs … text-hero dieselben Werte nutzen wie eigenes CSS. */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 3rem;
+  --fs-hero: clamp(2.5rem, 7vw, 5rem);
+
+  --tracking-wide: 0.06em;
+  --tracking-display: 0.18em; /* Anzeigetafel-Optik */
+
+  /* --- Abstände und Radien ---------------------------------------------- */
+  --space-section: clamp(3.5rem, 8vw, 7rem);
+  --content-width: 76rem;
+  --content-narrow: 48rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+
+  /* --- Schatten und Effekte --------------------------------------------- */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.28);
+  --shadow-raised: 0 2px 4px rgba(0, 0, 0, 0.5), 0 16px 48px rgba(0, 0, 0, 0.4);
+  --glow-accent: 0 0 0 1px var(--accent-border), 0 0 24px rgba(244, 96, 10, 0.2);
+
+  /* --- Bewegung: kurz und zurückhaltend ---------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+
+  /* --- Ebenen ------------------------------------------------------------ */
+  --z-map: 10;
+  --z-sticky: 40;
+  --z-header: 50;
+  --z-dropdown: 60;
+  --z-overlay: 70;
+  --z-dialog: 80;
+}
