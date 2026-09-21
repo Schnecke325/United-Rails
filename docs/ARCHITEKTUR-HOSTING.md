@@ -42,8 +42,8 @@ Die komplette Seite läuft als Laravel-Anwendung auf dem Plesk-Webspace.
 Vorlagen in Blade, Datenbank extern über MySQL, Dateien extern über einen
 S3-kompatiblen Speicher.
 
-**Passt zu den Bedingungen:** PHP 8.4 erfüllt die Anforderung von Laravel 12
-(ab PHP 8.2). Composer ist da. Geplante Aufgaben decken Cron und Warteschlange ab.
+**Passt zu den Bedingungen:** PHP 8.4 erfüllt die Anforderung von Laravel 13
+(ab PHP 8.3). Composer ist da. Geplante Aufgaben decken Cron und Warteschlange ab.
 Auf dem Server wird nichts gebaut.
 
 **Was aus der bisherigen Arbeit bleibt:** Das Designsystem in `tokens.css` und
@@ -116,7 +116,7 @@ wird, ist die Technik darunter, und die ist bisher ohnehin nur geplant.
 
 | Baustein | Wahl | Warum |
 |---|---|---|
-| Framework | Laravel 12 | Läuft auf PHP 8.2 und neuer, bringt Migrationen, Validierung, Rechte, Warteschlange und Dateiabstraktion mit |
+| Framework | Laravel 13 | Läuft auf PHP 8.3 und neuer, bringt Migrationen, Validierung, Rechte, Warteschlange und Dateiabstraktion mit |
 | Vorlagen | Blade | Keine Build-Kette auf dem Server, serverseitig gerendert |
 | CSS | Tailwind, gebaut außerhalb des Servers | Die bestehenden Tokens und Klassen bleiben |
 | Interaktion | Alpine.js, eine kleine Datei | Menü, Dialoge, Filter. Kein Bundler, kein React |
