@@ -1,0 +1,48 @@
+name: Deploy-Branch bauen
+
+# Der Webspace hat kein Node und baut nichts. Dieser Lauf erzeugt das fertige
+# CSS und JS und legt beides zusammen mit dem Quelltext auf den Branch
+# "deploy". Plesk zieht genau diesen Branch.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-assets
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Assets bauen und auf deploy schieben
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Abhängigkeiten
+        run: npm ci
+
+      - name: Assets bauen
+        run: npm run build
+
+      - name: Auf den Deploy-Branch schieben
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # public/build ist im Quellbranch ignoriert, auf dem Deploy-Branch
+          # gehört es dazu.
+          git checkout -B deploy
+          git add --force public/build
+          git commit -m "Assets für ${GITHUB_SHA::7} gebaut" || echo "Keine Änderung an den Assets"
+          git push --force origin deploy

@@ -3,6 +3,13 @@
 Grundlage: `docs/MASTER_PROMPT.txt` (vom Nutzer gelieferte Spezifikation).
 Stand: 2026-09-20
 
+> **Überholt, was den Tech-Stack angeht.** Dieses Dokument geht von Next.js auf einem
+> VPS aus. Der Webhoster stellt kein Node bereit. Gültig sind jetzt
+> `docs/ARCHITEKTUR-HOSTING.md` (Entscheidung und Begründung) und
+> `docs/MIGRATIONSPLAN.md` (Umstellung Datei für Datei). Die Anforderungsanalyse,
+> das Designsystem, das Datenmodell und die Sicherheitsgrundsätze weiter unten
+> gelten unverändert.
+
 ---
 
 ## 1. Anforderungsanalyse (Kurzfassung)
