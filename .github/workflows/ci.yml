@@ -20,6 +20,11 @@ jobs:
           extensions: mbstring, pdo_mysql, gd, zip, intl, fileinfo
           coverage: none
 
+      - name: composer.json und composer.lock abgleichen
+        # composer install warnt bei einem veralteten Lock nur, Plesk bricht ab.
+        # Deshalb hier streng prüfen, damit es nicht erst beim Deployment auffällt.
+        run: composer validate --strict --no-check-publish
+
       - name: Composer-Abhängigkeiten
         uses: ramsey/composer-install@v3
 
