@@ -1,0 +1,20 @@
+/**
+ * Schriften, selbst ausgeliefert.
+ *
+ * Die Dateien kommen als npm-Pakete ins Projekt und werden beim Build in das
+ * eigene Asset-Verzeichnis kopiert. Es wird keine Schrift von einem fremden
+ * Server geladen, und es geht keine IP-Adresse eines Besuchers nach außen.
+ *
+ * Inter für Fließtext, IBM Plex Mono für Fahrplan- und Anzeigetafel-Elemente,
+ * genau wie bisher.
+ */
+
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
+
+:root {
+  --font-inter: 'Inter Variable';
+  --font-mono-display: 'IBM Plex Mono';
+}

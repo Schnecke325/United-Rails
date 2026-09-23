@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+
+# TODO: Sitemap-URL eintragen, sobald die endgültige Domain feststeht.

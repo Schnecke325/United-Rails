@@ -1,0 +1,832 @@
+UNITED RAILS e.V. — MASTER PROMPT FOR CLAUDE CODE
+
+ROLE
+You are a senior full-stack developer, software architect and UI/UX designer.
+Build a production-ready, modular web platform for United Rails e.V., a Minecraft railway community and association.
+Do NOT build only a static mockup or generic Minecraft landing page.
+
+IMPORTANT WORKFLOW
+Before writing large amounts of code:
+1. Analyze the requirements.
+2. Propose a practical architecture.
+3. Choose an appropriate tech stack and briefly explain it.
+4. Create a project structure and implementation plan.
+5. Then implement step by step.
+Do not invent missing information. Use clearly marked placeholders/TODOs.
+
+PROJECT
+Name: United Rails e.V.
+Current domain: https://unlimited-rails.de
+The domain may change later, so URLs must be centrally configurable.
+
+United Rails combines:
+- a Minecraft railway server
+- railway building
+- trains and vehicles
+- stations and infrastructure
+- routes and timetables
+- a community
+- a registered association (e.V.)
+
+The website should represent both the association and the Minecraft project.
+
+DESIGN
+Style:
+- modern
+- industrial
+- railway/engineering inspired
+- professional
+- dark/elegant
+- modern gaming/community feel
+- only subtle Minecraft influence
+- NOT pixel-art heavy
+- NOT a generic Minecraft website
+
+Use visual ideas such as:
+- rails
+- railway signals
+- technical drawings
+- route maps
+- timetable elements
+- station displays
+- engineering grids
+- subtle blueprint details
+- steel/industrial surfaces
+
+Use a restrained dark palette with steel/gray tones and one strong railway/signal accent color.
+Use modern sans-serif typography.
+Create a reusable design-token/CSS-variable system.
+
+RESPONSIVE DESIGN
+Support:
+- desktop
+- laptop
+- tablet
+- smartphone
+
+Mobile navigation should use a proper mobile menu.
+All forms, maps, galleries and dashboards must remain usable on mobile.
+
+NAVIGATION
+Suggested main navigation:
+HOME
+PROJEKT
+SERVER
+GALERIE
+ÜBER UNS
+COMMUNITY
+DOWNLOADS
+MITMACHEN
+
+Possible dropdowns:
+
+COMMUNITY:
+- Discord
+- YouTube
+
+DOWNLOADS:
+- Modpack
+- CurseForge
+- Modrinth
+
+MITMACHEN:
+- Builder werden
+- Mitglied werden
+
+Adapt the navigation if you find a better UX.
+
+EXTERNAL LINKS
+Use centralized configuration/environment variables instead of hardcoding URLs everywhere.
+
+Example:
+SITE_URL=https://unlimited-rails.de
+DISCORD_URL=
+CURSEFORGE_URL=
+MODRINTH_URL=
+YOUTUBE_URL=https://www.youtube.com/@United-Rails
+GALLERY_URL=
+SERVER_URL=
+HOSTER_URL=
+
+Do not invent missing URLs.
+
+HOME PAGE
+Create a large hero/banner image at the top.
+
+Hero content:
+UNITED RAILS e.V.
+Minecraft Railway Community
+
+Possible CTA buttons:
+- SERVER ENTDECKEN
+- COMMUNITY BEITRETEN
+
+Do not invent official marketing text; use placeholders where necessary.
+
+HOME SECTIONS
+Include:
+1. Hero
+2. What is United Rails?
+3. Project/history
+4. Gallery preview
+5. Current modpack
+6. Server/community section
+7. Partner/hoster banner
+8. YouTube/Discord community section
+9. CTA to participate
+10. Footer
+
+HISTORY
+Create a modern timeline for the founding/history of United Rails.
+Do not invent dates.
+
+Use:
+[PLACEHOLDER: OFFICIAL UNITED RAILS HISTORY]
+
+ABOUT US
+Explain:
+- association
+- Minecraft project
+- community
+- goals
+- team
+
+Create a team section with database-driven profiles.
+Do not invent real people.
+
+GALLERY
+The gallery should feel similar to Pinterest.
+
+Use a responsive Masonry layout with images of different heights.
+
+Fixed selectable categories only; users must NOT create arbitrary hashtags.
+
+Example categories:
+- Fahrzeuge
+- Bauwerke
+- Bahnhöfe
+- Strecken
+- Landschaft
+- Sonstiges
+
+One image may have multiple categories.
+
+GALLERY UPLOAD
+Community members can upload images.
+
+Fields:
+- image
+- title
+- description
+- multiple categories
+- Minecraft name
+- optionally Discord name
+
+Uploads must NOT immediately become public.
+
+Status:
+PENDING
+APPROVED
+REJECTED
+
+After uploading, show a message explaining that the image is waiting for team moderation.
+
+GALLERY MODERATION
+Team members with the appropriate permission can:
+- review images
+- approve
+- reject
+- delete
+- edit title
+- edit description
+- edit categories
+
+Create a moderation queue in the admin dashboard.
+
+BUILDER APPLICATION
+Create a dedicated Builder Application page.
+
+Applicants provide:
+- Minecraft name
+- Discord name
+- explanation why they should be selected
+- several portfolio images of vehicles/buildings/etc.
+
+Allow multiple image uploads.
+Validate file type, MIME type, size and filename securely.
+
+Builder application statuses:
+NEW
+REVIEWING
+ACCEPTED
+REJECTED
+NEEDS_INFORMATION
+
+The team can review applications and uploaded images.
+
+MEMBERSHIP
+There are TWO ways to express interest in joining United Rails e.V.
+
+1. Through the Builder Application:
+Add a checkbox such as:
+"I would also like to express interest in becoming a member of United Rails e.V."
+
+2. Through a separate "Mitglied werden" page:
+Fields:
+- Minecraft name
+- Discord name
+- reason/motivation
+
+Do not require a real-life name for this initial digital membership interest form.
+
+Clearly distinguish an online membership-interest request from a legally complete association membership application.
+Do not invent legal claims or requirements.
+
+TEAM LOGIN
+Use Discord OAuth for team authentication.
+
+Login:
+"Mit Discord anmelden"
+
+Retrieve appropriate Discord identity information such as:
+- Discord user ID
+- username
+- avatar
+
+Do NOT invent passwords or use an unnecessary local password system.
+
+IMPORTANT:
+Discord roles should NOT automatically equal website admin permissions.
+Discord OAuth identifies the person.
+The website database controls website roles and permissions.
+
+ROLES
+Implement an extensible role/permission system.
+
+Example roles:
+OWNER
+ADMIN
+MODERATOR
+BUILDER_TEAM
+GALLERY_TEAM
+
+Example permissions:
+OWNER: everything
+ADMIN: applications, gallery, modpacks, server management, team management
+MODERATOR: review applications, moderate gallery
+GALLERY_TEAM: gallery management
+BUILDER_TEAM: builder application management
+
+Centralize permissions so they can easily be changed later.
+
+ADMIN DASHBOARD
+Create a protected admin area.
+
+Example:
+Dashboard
+Applications
+Gallery
+Modpacks
+Server
+Team
+Settings
+
+Dashboard overview:
+- new applications
+- gallery items awaiting approval
+- current modpack
+- server status
+
+TEAM MANAGEMENT
+Authorized admins/owners can:
+- add team members
+- assign roles
+- remove roles
+- deactivate access
+- view permissions
+
+AUDIT LOG
+Log important administrative actions:
+- approved/rejected gallery item
+- application status changes
+- role changes
+- other sensitive admin actions
+
+SERVER PAGE
+This is one of the most important parts.
+
+The server page should eventually feel like:
+DB Navigator + Google Maps + Minecraft Railway Network.
+
+Include:
+- network map
+- stations
+- routes
+- timetables
+- trains
+- route planning
+- connections
+
+SERVER NAVIGATOR
+Plan a route search UI:
+
+From:
+[station]
+
+To:
+[station]
+
+[CONNECTION SEARCH]
+
+Results can contain:
+- departure
+- arrival
+- duration
+- train
+- line
+- transfers
+
+CREATE RAILWAY NAVIGATOR (CRN) API
+The website will later use the Create Railway Navigator API.
+
+IMPORTANT:
+The official CRN API documentation will be provided later.
+DO NOT invent endpoints, authentication methods, request formats or response formats.
+
+Instead create a clean adapter/service layer, for example:
+
+services/
+  railway/
+    railwayApi
+    railwayAdapter
+
+Prepare TODOs for:
+- official CRN documentation
+- API base URL
+- authentication if required
+- API data models
+- rate limits
+- caching
+
+Once the official CRN documentation is provided, integrate it according to that documentation only.
+
+SERVER MAP
+Do NOT assume BlueMap.
+
+The planned map will probably consist of multiple PNG tiles in a grid.
+
+Example:
+tile_0_0.png
+tile_0_1.png
+tile_0_2.png
+tile_1_0.png
+tile_1_1.png
+tile_1_2.png
+
+Build a map component that can:
+- load tile grids
+- zoom
+- pan
+- show markers
+- show stations
+- show routes
+- show POIs
+- potentially show train positions later
+
+The system should scale to many tiles.
+
+Do not require one giant PNG.
+
+SERVER STATUS
+Prepare the architecture for a future live server-status API.
+
+Possible display:
+ONLINE
+24 / 100 players
+
+Do not display fake live data in production.
+If no real data source exists, clearly show a placeholder/TODO.
+
+MODPACK
+Create a dedicated Downloads/Modpack page.
+
+Current release:
+- version
+- Minecraft version
+- loader
+- release date
+- changelog
+- direct download
+- CurseForge
+- Modrinth
+
+The current version should be prominently displayed.
+
+OLDER VERSIONS
+Older releases should be collapsed/expandable.
+
+Example:
+> Version 2.3.1
+> Version 2.3.0
+> Version 2.2.0
+
+Opening a version shows:
+- version
+- release date
+- Minecraft version
+- loader
+- changelog
+- download
+
+Modpack files will later be hosted in cloud storage.
+Do not assume a specific cloud provider.
+
+MODPACK MANAGEMENT
+Authorized team members should eventually be able to add/edit releases through the admin dashboard rather than editing source code.
+
+DATABASE
+Use a proper relational database and ORM where appropriate.
+
+Plan at least these logical entities:
+
+users
+team_members
+roles
+permissions
+
+builder_applications
+membership_applications
+
+gallery_images
+gallery_categories
+
+modpack_versions
+modpack_files
+
+server_stations
+server_routes
+server_trains
+map_tiles
+
+audit_logs
+
+Adjust the schema if the chosen stack requires it.
+
+STORAGE
+Create a storage abstraction because the final cloud-storage provider is not yet decided.
+
+Example:
+StorageService
+- upload()
+- delete()
+- getUrl()
+- exists()
+
+Do not tightly couple the application to one storage provider.
+
+Use cloud storage later for:
+- gallery images
+- thumbnails
+- modpack ZIP files
+- other uploaded assets
+
+UPLOAD SECURITY
+Secure all uploads:
+- MIME validation
+- extension validation
+- file-size limits
+- safe generated filenames
+- safe storage paths
+- image processing/optimization
+- prevent executable uploads
+
+Use thumbnails and modern image formats where useful.
+
+SECURITY
+Implement:
+- secure sessions
+- OAuth state validation
+- server-side authorization
+- input validation
+- rate limiting on public forms
+- secure file uploads
+- XSS protection
+- SQL injection protection
+- no secrets in frontend
+- .env support
+- safe error messages
+- audit logging
+
+Never rely only on frontend permission checks.
+Every protected backend operation must enforce permissions server-side.
+
+PUBLIC VS PRIVATE
+Public:
+- home
+- project/about
+- history
+- server
+- gallery
+- downloads
+- Discord
+- YouTube
+- CurseForge
+- Modrinth
+- Builder Application
+- Membership
+
+Private:
+- admin dashboard
+- applications
+- moderation
+- team management
+- modpack management
+- internal administration
+
+SEO
+Implement:
+- page titles
+- meta descriptions
+- Open Graph
+- favicon
+- canonical URLs
+- semantic HTML
+- sensible heading hierarchy
+
+ACCESSIBILITY
+Support:
+- good contrast
+- keyboard navigation
+- visible focus states
+- alt text
+- proper labels
+- semantic HTML
+- accessible forms
+- accessible buttons
+
+PERFORMANCE
+Optimize:
+- image loading
+- lazy loading
+- responsive images
+- caching
+- code splitting
+- bundle size
+- API requests
+- fonts
+
+Do not add excessive animations.
+
+ANIMATIONS
+Use subtle:
+- fade
+- slide
+- hover
+- transitions
+- map interactions
+
+Keep the website professional and fast.
+
+FOOTER
+Include:
+United Rails e.V.
+
+Links:
+- Über uns
+- Server
+- Galerie
+- Modpack
+- Builder werden
+- Mitglied werden
+- Discord
+- YouTube
+- CurseForge
+- Modrinth
+
+Also provide:
+- Impressum
+- Datenschutz
+
+Do not invent official legal text. Use placeholders until the association provides the required information.
+
+INTERNAL ROUTING
+Use proper internal routing.
+
+Possible routes:
+/
+ /project
+ /about
+ /server
+ /gallery
+ /downloads
+ /builders
+ /membership
+ /community
+ /admin
+
+Adapt as appropriate.
+
+EXTERNAL LINKS
+Keep external URLs centralized.
+
+YouTube:
+https://www.youtube.com/@United-Rails
+
+Other URLs should remain placeholders until provided.
+
+HOSTING
+The current server hoster has offered to host the website as well.
+
+Choose a practical architecture that can run on a normal modern server/VPS/web-hosting environment.
+
+Create a README explaining:
+- prerequisites
+- installation
+- environment variables
+- database setup
+- migrations
+- development
+- production build
+- deployment
+- backups
+
+Create:
+.env.example
+
+Possible variables:
+
+DATABASE_URL=
+
+DISCORD_CLIENT_ID=
+DISCORD_CLIENT_SECRET=
+DISCORD_REDIRECT_URI=
+
+SITE_URL=
+
+DISCORD_URL=
+CURSEFORGE_URL=
+MODRINTH_URL=
+YOUTUBE_URL=https://www.youtube.com/@United-Rails
+GALLERY_URL=
+SERVER_URL=
+HOSTER_URL=
+
+STORAGE_PROVIDER=
+STORAGE_BUCKET=
+STORAGE_ENDPOINT=
+STORAGE_ACCESS_KEY=
+STORAGE_SECRET_KEY=
+
+CRN_API_BASE_URL=
+CRN_API_KEY=
+
+The CRN variables are placeholders only until official documentation is provided.
+
+TESTING
+Add tests for critical functionality:
+- authentication
+- permissions
+- builder applications
+- membership applications
+- gallery moderation
+- upload validation
+- modpack management
+- CRN adapter/service layer
+
+ERROR HANDLING
+Create useful 404 and 500 pages.
+
+Example tone:
+404:
+"Diese Strecke wurde nicht gefunden."
+
+500:
+"Signalstörung. Auf unserer Seite ist etwas schiefgelaufen."
+
+Do not expose stack traces or secrets.
+
+TEAM PROFILES
+Optional public team profiles can contain:
+- display name
+- role
+- avatar
+- short description
+- joined date
+
+Do not expose private information.
+
+COMMUNITY-FIRST UX
+Guide visitors toward:
+- joining the server
+- joining Discord
+- downloading the modpack
+- viewing the gallery
+- applying as a builder
+- expressing membership interest
+- watching YouTube
+
+Do not add unrelated features such as:
+- shop
+- payments
+- forum
+- social network
+unless explicitly requested later.
+
+TECH STACK
+Choose a modern, maintainable TypeScript-based full-stack architecture.
+A React-based framework is preferred.
+Use an appropriate relational database and ORM.
+The final choice should be compatible with the hosting environment.
+
+Explain the chosen stack before implementation.
+
+PROJECT QUALITY
+Use:
+- TypeScript
+- modular components
+- reusable services
+- clean separation of frontend/backend/data access
+- typed APIs
+- centralized configuration
+- maintainable naming
+- no unnecessary duplication
+
+Do not put the whole application into a few huge files.
+
+IMPLEMENTATION PRIORITY
+
+1. Architecture and project setup
+2. Design system and public layout
+3. Routing
+4. Backend/database foundation
+5. Discord OAuth
+6. Roles/permissions
+7. Admin dashboard
+8. Builder applications
+9. Membership applications
+10. Gallery and moderation
+11. Modpack management
+12. Storage abstraction
+13. Server page and map architecture
+14. CRN API adapter
+15. Performance, SEO and accessibility
+16. Testing
+17. Deployment documentation
+
+DEFINITION OF DONE
+
+The project is not considered complete just because the homepage looks good.
+
+It should eventually include:
+- functioning public website
+- responsive layout
+- routing
+- Discord authentication
+- role/permission system
+- protected admin area
+- builder applications
+- membership applications
+- gallery uploads
+- gallery moderation
+- modpack management
+- storage abstraction
+- server/map architecture
+- CRN integration point
+- centralized external links
+- security basics
+- README
+- .env.example
+- tests for critical functionality
+- no secrets committed
+- no invented API endpoints
+- no invented official association information
+- no fake production data
+
+FINAL WORKING PRINCIPLE
+
+The final result should feel like:
+
+"A modern digital platform for a real railway association with a Minecraft railway community."
+
+It should NOT feel like:
+
+"A Minecraft website with a few buttons."
+
+Minecraft is part of United Rails, but it should not dominate the visual identity.
+
+United Rails e.V. should feel like a long-term project and real organization.
+
+START NOW
+
+First:
+1. Analyze the requirements.
+2. Propose the architecture.
+3. Explain the selected tech stack.
+4. Show the project structure.
+5. Show the implementation roadmap.
+6. Then begin implementation.
+
+Do not wait for missing information that can safely be represented by placeholders.
+
+For the CRN API:
+Prepare the architecture, but DO NOT invent API endpoints. The official CRN documentation will be supplied later.
